@@ -1,25 +1,180 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>Markmap</title>
+<title>Markmap - DAX</title>
+<link rel="stylesheet" href="'">
 <style>
-* {
-  margin: 0;
-  padding: 0;
-}
-#mindmap {
-  display: block;
-  width: 100vw;
-  height: 100vh;
-}
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+    body {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        overflow: hidden;
+        background-color: #f5f5f5;
+    }
+    header {
+        background-color: #4CAF50;
+        padding: 10px;
+        text-align: center;
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+    }
+    #mindmap-container {
+        flex: 1;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #mindmap {
+        width: 100%;
+        height: 100%;
+        border: 1px solid #ccc;
+        background-color: white;
+    }
+    footer {
+        background-color: #4CAF50;
+        padding: 10px;
+        text-align: center;
+        color: white;
+        font-size: 14px;
+    }
 </style>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.17.3-alpha.1/dist/style.css">
 </head>
 <body>
-<svg id="mindmap"></svg>
-<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.17.3-alpha.1/dist/browser/index.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.17.3-alpha.1/dist/index.js"></script><script>(()=>{setTimeout(()=>{const{markmap:q,mm:v}=window,j=new q.Toolbar;j.attach(v);const we=j.render();we.setAttribute("style","position:absolute;bottom:20px;right:20px"),document.body.append(we)})})()</script><script>((f,d,h,u)=>{const g=f();window.mm=g.Markmap.create("svg#mindmap",(d||g.deriveOptions)(u),h)})(()=>window.markmap,null,{"content":"🧠➡Linguagem DAX","children":[{"content":"Funções Matemáticas","children":[{"content":"<code>SUM()</code>","children":[{"content":"Soma os valores de uma coluna.","children":[],"payload":{"lines":"4,5"}},{"content":"Exemplo: <code>SUM(Sales[Amount])</code>","children":[],"payload":{"lines":"5,6"}}],"payload":{"lines":"3,6"}},{"content":"<code>AVERAGE()</code>","children":[{"content":"Calcula a média dos valores de uma coluna.","children":[],"payload":{"lines":"7,8"}},{"content":"Exemplo: <code>AVERAGE(Sales[Amount])</code>","children":[],"payload":{"lines":"8,9"}}],"payload":{"lines":"6,9"}},{"content":"<code>DIVIDE()</code>","children":[{"content":"Divide dois números, retornando BLANK se o divisor for 0.","children":[],"payload":{"lines":"10,11"}},{"content":"Exemplo: <code>DIVIDE(Sales[Revenue], Sales[Units])</code>","children":[],"payload":{"lines":"11,13"}}],"payload":{"lines":"9,13"}}],"payload":{"lines":"2,3"}},{"content":"Funções Lógicas","children":[{"content":"<code>IF()</code>","children":[{"content":"Retorna um valor com base em uma condição.","children":[],"payload":{"lines":"15,16"}},{"content":"Exemplo: <code>IF(Sales[Amount] &gt; 1000, \"Alto\", \"Baixo\")</code>","children":[],"payload":{"lines":"16,17"}}],"payload":{"lines":"14,17"}},{"content":"<code>AND()</code>","children":[{"content":"Retorna TRUE se todas as condições forem verdadeiras.","children":[],"payload":{"lines":"18,19"}},{"content":"Exemplo: <code>AND(Sales[Amount] &gt; 500, Sales[Region] = \"East\")</code>","children":[],"payload":{"lines":"19,20"}}],"payload":{"lines":"17,20"}},{"content":"<code>OR()</code>","children":[{"content":"Retorna TRUE se pelo menos uma condição for verdadeira.","children":[],"payload":{"lines":"21,22"}},{"content":"Exemplo: <code>OR(Sales[Amount] &gt; 500, Sales[Region] = \"West\")</code>","children":[],"payload":{"lines":"22,24"}}],"payload":{"lines":"20,24"}}],"payload":{"lines":"13,14"}},{"content":"Funções de Texto","children":[{"content":"<code>CONCATENATE()</code>","children":[{"content":"Junta dois valores de texto.","children":[],"payload":{"lines":"26,27"}},{"content":"Exemplo: <code>CONCATENATE(Sales[FirstName], Sales[LastName])</code>","children":[],"payload":{"lines":"27,28"}}],"payload":{"lines":"25,28"}},{"content":"<code>FORMAT()</code>","children":[{"content":"Formata um valor com base em uma cadeia de formato.","children":[],"payload":{"lines":"29,30"}},{"content":"Exemplo: <code>FORMAT(Sales[Date], \"DD/MM/YYYY\")</code>","children":[],"payload":{"lines":"30,32"}}],"payload":{"lines":"28,32"}}],"payload":{"lines":"24,25"}},{"content":"Funções de Data e Hora","children":[{"content":"<code>TODAY()</code>","children":[{"content":"Retorna a data atual.","children":[],"payload":{"lines":"34,35"}},{"content":"Exemplo: <code>TODAY()</code>","children":[],"payload":{"lines":"35,36"}}],"payload":{"lines":"33,36"}},{"content":"<code>YEAR()</code>","children":[{"content":"Extrai o ano de uma data.","children":[],"payload":{"lines":"37,38"}},{"content":"Exemplo: <code>YEAR(Sales[Date])</code>","children":[],"payload":{"lines":"38,39"}}],"payload":{"lines":"36,39"}},{"content":"<code>DATEDIFF()</code>","children":[{"content":"Retorna a diferença entre duas datas em uma unidade específica.","children":[],"payload":{"lines":"40,41"}},{"content":"Exemplo: <code>DATEDIFF(Sales[StartDate], Sales[EndDate], DAY)</code>","children":[],"payload":{"lines":"41,43"}}],"payload":{"lines":"39,43"}}],"payload":{"lines":"32,33"}},{"content":"Funções de Agregação","children":[{"content":"<code>SUMX()</code>","children":[{"content":"Soma uma expressão avaliada linha por linha.","children":[],"payload":{"lines":"45,46"}},{"content":"Exemplo: <code>SUMX(Sales, Sales[Price] * Sales[Quantity])</code>","children":[],"payload":{"lines":"46,47"}}],"payload":{"lines":"44,47"}},{"content":"<code>COUNT()</code>","children":[{"content":"Conta o número de valores em uma coluna.","children":[],"payload":{"lines":"48,49"}},{"content":"Exemplo: <code>COUNT(Sales[Amount])</code>","children":[],"payload":{"lines":"49,50"}}],"payload":{"lines":"47,50"}},{"content":"<code>COUNTROWS()</code>","children":[{"content":"Conta o número de linhas em uma tabela.","children":[],"payload":{"lines":"51,52"}},{"content":"Exemplo: <code>COUNTROWS(Sales)</code>","children":[],"payload":{"lines":"52,54"}}],"payload":{"lines":"50,54"}}],"payload":{"lines":"43,44"}},{"content":"Funções de Filtro","children":[{"content":"<code>FILTER()</code>","children":[{"content":"Retorna uma tabela que é um subconjunto de uma tabela original, com base em uma expressão lógica.","children":[],"payload":{"lines":"56,57"}},{"content":"Exemplo: <code>FILTER(Sales, Sales[Amount] &gt; 1000)</code>","children":[],"payload":{"lines":"57,58"}}],"payload":{"lines":"55,58"}},{"content":"<code>ALL()</code>","children":[{"content":"Retorna todas as linhas de uma tabela, ignorando qualquer filtro existente.","children":[],"payload":{"lines":"59,60"}},{"content":"Exemplo: <code>ALL(Sales)</code>","children":[],"payload":{"lines":"60,62"}}],"payload":{"lines":"58,62"}}],"payload":{"lines":"54,55"}},{"content":"Funções de Informação","children":[{"content":"<code>ISBLANK()</code>","children":[{"content":"Retorna TRUE se o valor for BLANK.","children":[],"payload":{"lines":"64,65"}},{"content":"Exemplo: <code>ISBLANK(Sales[Discount])</code>","children":[],"payload":{"lines":"65,66"}}],"payload":{"lines":"63,66"}},{"content":"<code>ISNUMBER()</code>","children":[{"content":"Retorna TRUE se o valor for um número.","children":[],"payload":{"lines":"67,68"}},{"content":"Exemplo: <code>ISNUMBER(Sales[Amount])</code>","children":[],"payload":{"lines":"68,70"}}],"payload":{"lines":"66,70"}}],"payload":{"lines":"62,63"}},{"content":"Funções de Relacionamento","children":[{"content":"<code>RELATED()</code>","children":[{"content":"Retorna um valor de uma tabela relacionada.","children":[],"payload":{"lines":"72,73"}},{"content":"Exemplo: <code>RELATED(Product[Category])</code>","children":[],"payload":{"lines":"73,74"}}],"payload":{"lines":"71,74"}},{"content":"<code>RELATEDTABLE()</code>","children":[{"content":"Retorna uma tabela relacionada com a tabela atual.","children":[],"payload":{"lines":"75,76"}},{"content":"Exemplo: <code>RELATEDTABLE(Sales)</code>","children":[],"payload":{"lines":"76,78"}}],"payload":{"lines":"74,78"}}],"payload":{"lines":"70,71"}}],"payload":{"lines":"0,1"}},null)</script>
+<header>
+    Mindmap de Funções DAX
+</header>
+<div id="mindmap-container">
+    <svg id="mindmap"></svg>
+</div>
+<footer>
+    © 2024 Seu Nome - Todos os direitos reservados
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/markmap-view@0.17.3-alpha.1/dist/browser/index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.17.3-alpha.1/dist/index.js"></script>
+<script>
+    (() => {
+        setTimeout(() => {
+            const { markmap: q, mm: v } = window;
+            const toolbar = new q.Toolbar();
+            toolbar.attach(v);
+            const toolbarElement = toolbar.render();
+            toolbarElement.setAttribute("style", "position:absolute;bottom:20px;right:20px");
+            document.body.append(toolbarElement);
+        });
+    })();
+
+    ((f, d, h, u) => {
+        const g = f();
+        window.mm = g.Markmap.create("svg#mindmap", (d || g.deriveOptions)(u), h);
+    })(() => window.markmap, null, {
+        "content": "DAX Functions in Power BI",
+        "children": [
+            {
+                "content": "Aggregation Functions",
+                "children": [
+                    { "content": "<strong>SUM</strong>", "children": [{ "content": "Description: Returns the sum of a column." }, { "content": "Example: <code>SUM(Sales[Revenue])</code>" }] },
+                    { "content": "<strong>AVERAGE</strong>", "children": [{ "content": "Description: Returns the average of a column." }, { "content": "Example: <code>AVERAGE(Sales[Revenue])</code>" }] },
+                    { "content": "<strong>COUNT</strong>", "children": [{ "content": "Description: Counts the number of values in a column." }, { "content": "Example: <code>COUNT(Customers[CustomerID])</code>" }] },
+                    { "content": "<strong>MAX</strong>", "children": [{ "content": "Description: Returns the maximum value in a column." }, { "content": "Example: <code>MAX(Sales[Revenue])</code>" }] },
+                    { "content": "<strong>MIN</strong>", "children": [{ "content": "Description: Returns the minimum value in a column." }, { "content": "Example: <code>MIN(Sales[Revenue])</code>" }] }
+                ]
+            },
+            {
+                "content": "Filter Functions",
+                "children": [
+                    { "content": "<strong>FILTER</strong>", "children": [{ "content": "Description: Returns a table that represents a subset of another table based on a condition." }, { "content": "Example: <code>FILTER(Sales, Sales[Revenue] > 1000)</code>" }] },
+                    { "content": "<strong>ALL</strong>", "children": [{ "content": "Description: Ignores all filters applied on a column or table." }, { "content": "Example: <code>CALCULATE(SUM(Sales[Revenue]), ALL(Sales[Region]))</code>" }] },
+                    { "content": "<strong>CALCULATE</strong>", "children": [{ "content": "Description: Evaluates an expression in a modified context." }, { "content": "Example: <code>CALCULATE(SUM(Sales[Revenue]), Sales[Region] = \"North\")</code>" }] },
+                    { "content": "<strong>RELATED</strong>", "children": [{ "content": "Description: Returns a related value from another table." }, { "content": "Example: <code>RELATED(Products[ProductName])</code>" }] }
+                ]
+            },
+            {
+                "content": "Time Intelligence Functions",
+                "children": [
+                    { "content": "<strong>DATEADD</strong>", "children": [{ "content": "Description: Shifts a date by a specified interval." }, { "content": "Example: <code>DATEADD(Calendar[Date], -1, YEAR)</code>" }] },
+                    { "content": "<strong>TOTALYTD</strong>", "children": [{ "content": "Description: Calculates year-to-date values." }, { "content": "Example: <code>TOTALYTD(SUM(Sales[Revenue]), Calendar[Date])</code>" }] },
+                    { "content": "<strong>SAMEPERIODLASTYEAR</strong>", "children": [{ "content": "Description: Returns a set of dates in the same period last year." }, { "content": "Example: <code>SAMEPERIODLASTYEAR(Calendar[Date])</code>" }] },
+                    { "content": "<strong>DATESBETWEEN</strong>", "children": [{ "content": "Description: Returns a range of dates between two dates." }, { "content": "Example: <code>DATESBETWEEN(Calendar[Date], DATE(2023,1,1), DATE(2023,12,31))</code>" }] }
+                ]
+            },
+            {
+                "content": "Logical Functions",
+                "children": [
+                    { "content": "<strong>IF</strong>", "children": [{ "content": "Description: Checks a condition and returns different values based on it." }, { "content": "Example: <code>IF(Sales[Revenue] > 1000, \"High\", \"Low\")</code>" }] },
+                    { "content": "<strong>SWITCH</strong>", "children": [{ "content": "Description: Evaluates an expression against a list of values and returns corresponding results." }, { "content": "Example: <code>SWITCH(TRUE(), Sales[Revenue] > 1000, \"High\", Sales[Revenue] > 500, \"Medium\", \"Low\")</code>" }] }
+                ]
+            },
+            {
+                "content": "Mathematical Functions",
+                "children": [
+                    { "content": "<strong>DIVIDE</strong>", "children": [{ "content": "Description: Safely divides two numbers and returns the result." }, { "content": "Example: <code>DIVIDE(Sales[Revenue], Sales[Quantity])</code>" }] },
+                    { "content": "<strong>ROUND</strong>", "children": [{ "content": "Description: Rounds a number to the specified number of digits." }, { "content": "Example: <code>ROUND(Sales[Revenue], 2)</code>" }] },
+                    { "content": "<strong>CEILING</strong>", "children": [{ "content": "Description: Returns the nearest integer or specified increment greater than or equal to a given number." }, { "content": "Example: <code>CEILING(Sales[Revenue], 10)</code>" }] }
+                ]
+            },
+            {
+                "content": "Text Functions",
+                "children": [
+                    { "content": "<strong>CONCATENATE</strong>", "children": [{ "content": "Description: Joins two text strings into one." }, { "content": "Example: <code>CONCATENATE(Products[ProductName], \" - \", Products[Category])</code>" }] },
+                    { "content": "<strong>LEFT</strong>", "children": [{ "content": "Description: Returns the first N characters of a string." }, { "content": "Example: <code>LEFT(Products[ProductName], 5)</code>" }] },
+                    { "content": "<strong>SEARCH</strong>", "children": [{ "content": "Description: Searches for a substring within a string and returns its position." }, { "content": "Example: <code>SEARCH(\"Pro\", Products[ProductName])</code>" }] }
+                ]
+            },
+            {
+                "content": "Ranking Functions",
+                "children": [
+                    { "content": "<strong>RANKX</strong>", "children": [{ "content": "Description: Returns the ranking of a number in a list of numbers." }, { "content": "Example: <code>RANKX(ALL(Sales), Sales[Revenue], , DESC)</code>" }] },
+                    { "content": "<strong>TOPN</strong>", "children": [{ "content": "Description: Returns the top N rows of a table based on a given expression." }, { "content": "Example: <code>TOPN(5, Sales, Sales[Revenue], DESC)</code>" }] }
+                ]
+            },
+            {
+                "content": "Miscellaneous Functions",
+                "children": [
+                    { "content": "<strong>LOOKUPVALUE</strong>", "children": [{ "content": "Description: Returns the value for a row that meets all specified conditions." }, { "content": "Example: <code>LOOKUPVALUE(Products[Price], Products[ProductID], Sales[ProductID])</code>" }] },
+                    { "content": "<strong>USERELATIONSHIP</strong>", "children": [{ "content": "Description: Specifies an inactive relationship to be used in a calculation." }, { "content": "Example: <code>CALCULATE(SUM(Sales[Revenue]), USERELATIONSHIP(Sales[Date], Calendar[Date]))</code>" }] },
+                    { "content": "<strong>ISBLANK</strong>", "children": [{ "content": "Description: Returns TRUE if the value is blank." }, { "content": "Example: <code>ISBLANK(Sales[Revenue])</code>" }] }
+                ]
+            },
+            {
+                "content": "Formatting Functions",
+                "children": [
+                    {
+                        "content": "Number Formatting",
+                        "children": [
+                            { "content": "<strong>Currency</strong>", "children": [{ "content": "Example: <code>FORMAT(Sales[Revenue], \"$#,##0.00\")</code>" }, { "content": "Output: $12,345.67" }] },
+                            { "content": "<strong>Percentage</strong>", "children": [{ "content": "Example: <code>FORMAT(Sales[Growth], \"0.00%\")</code>" }, { "content": "Output: 12.34%" }] },
+                            { "content": "<strong>Decimal</strong>", "children": [{ "content": "Example: <code>FORMAT(Sales[Revenue], \"0.00\")</code>" }, { "content": "Output: 12345.67" }] },
+                            { "content": "<strong>Thousands Separator</strong>", "children": [{ "content": "Example: <code>FORMAT(Sales[Revenue], \"#,##0\")</code>" }, { "content": "Output: 12,345" }] }
+                        ]
+                    },
+                    {
+                        "content": "Date Formatting",
+                        "children": [
+                            { "content": "<strong>Day/Month/Year</strong>", "children": [{ "content": "Example: <code>FORMAT(Calendar[Date], \"dd/mm/yyyy\")</code>" }, { "content": "Output: 14/10/2024" }] },
+                            { "content": "<strong>Month/Day/Year</strong>", "children": [{ "content": "Example: <code>FORMAT(Calendar[Date], \"mm/dd/yyyy\")</code>" }, { "content": "Output: 10/14/2024" }] },
+                            { "content": "<strong>Full Month Name</strong>", "children": [{ "content": "Example: <code>FORMAT(Calendar[Date], \"MMMM yyyy\")</code>" }, { "content": "Output: October 2024" }] },
+                            { "content": "<strong>Short Month Name</strong>", "children": [{ "content": "Example: <code>FORMAT(Calendar[Date], \"MMM yyyy\")</code>" }, { "content": "Output: Oct 2024" }] },
+                            { "content": "<strong>Year Only</strong>", "children": [{ "content": "Example: <code>FORMAT(Calendar[Date], \"yyyy\")</code>" }, { "content": "Output: 2024" }] },
+                            { "content": "<strong>Custom Date Time</strong>", "children": [{ "content": "Example: <code>FORMAT(Calendar[DateTime], \"dd mmm yyyy hh:mm AM/PM\")</code>" }, { "content": "Output: 14 Oct 2024 10:30 AM" }] }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }, null);
+</script>
 </body>
 </html>
