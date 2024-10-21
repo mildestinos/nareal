@@ -3,20 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Power BI Na Real </title>
+    <title>Power BI Na Real</title>
     <!-- Link para o Font Awesome (ícones) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-    <div class="social-icons">
-            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.reddit.com" target="_blank"><i class="fab fa-reddit-alien"></i></a>
-        </div>
-	
-	
-	
-	<style>
+    <style>
         body {
             font-family: 'Arial', sans-serif;
             background-color: #f7f9fc;
@@ -35,6 +25,22 @@
         h1 {
             font-size: 2.5em;
             margin: 0;
+        }
+
+        .social-links {
+            margin-top: 10px;
+        }
+
+        .social-links a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5em;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #f78c1e;
         }
 
         .container {
@@ -94,7 +100,7 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            background-color: #FF0000; /* Fundo preto */
+            background-color: #FF0000;
             color: white;
             padding: 10px 0;
             font-family: Arial, sans-serif;
@@ -107,7 +113,7 @@
             white-space: nowrap;
             will-change: transform;
             padding-left: 100%;
-            animation: ticker 40s linear infinite; /* Duração da animação */
+            animation: ticker 40s linear infinite;
         }
 
         @keyframes ticker {
@@ -125,7 +131,7 @@
         }
 
         .news-ticker-content i {
-            margin-right: 5px; /* Espaço entre o ícone e o texto */
+            margin-right: 5px;
         }
 
         footer {
@@ -176,7 +182,6 @@
             color: white;
         }
 
-        /* Modal para bio do perfil */
         .modal {
             display: none;
             position: fixed;
@@ -250,7 +255,20 @@
 <body>
 
     <header>
-        <h1>Power BI Na Real </h1>
+        <h1>Power BI Na Real</h1>
+        <!-- Links das Redes Sociais -->
+        <div class="social-links">
+          
+            <a href="https://www.instagram.com/ericvieira_df" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/ericvieiradf/" target="_blank">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://www.youtube.com/@powerbinareal?sub_confirmation=1" target="_blank">
+                <i class="fab fa-youtube"></i>
+            </a>
+        </div>
     </header>
 
     <!-- Cards interativos na lateral esquerda -->
@@ -278,18 +296,16 @@
             <i class="fas fa-file-alt"></i>
             <p><a href="pagina_de_artigos.html" target="_self">Artigos</a></p>
         </div>
-		 <!-- Card 4 -->
+
+        <!-- Card 5 -->
         <div class="card">
             <i class="fas fa-sitemap"></i>
             <p><a href="Mapa_Mental.html" target="_self">Mapa Mental DAX</a></p>
         </div>
-		        <div class="card">
+        <div class="card">
             <i class="fas fa-book"></i>
             <p><a href="livros.html" target="_self">Livros DAX/ M e IA</a></p>
         </div>
-		
-		
-		
     </div>
 
     <!-- Modal da Bio -->
@@ -382,7 +398,7 @@
                 <i class="fas fa-cloud"></i>
             </div>
             <h2>Trabalhando com Datas</h2>
-            <p>Um dos vídos mais assistidos do canal.</p>
+            <p>Um dos vídeos mais assistidos do canal.</p>
             <div class="video-container">
                 <iframe src="https://www.youtube.com/embed/JfjAe4VrIL8" allowfullscreen></iframe>
             </div>
