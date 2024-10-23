@@ -59,6 +59,9 @@
             padding: 20px;
             text-align: center;
             transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .section:hover {
@@ -81,7 +84,8 @@
 
         .video-container {
             position: relative;
-            padding-top: 56.25%;
+            padding-top: 56.25%; /* Mantém a proporção 16:9 */
+            flex-shrink: 0;
         }
 
         .video-container iframe {
@@ -218,6 +222,19 @@
             color: black;
         }
 
+        /* Iframe container */
+        #iframeContainer {
+            display: none;
+            margin: 20px auto;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        /* Ocultar conteúdo extra quando o iframe for exibido */
+        .hidden {
+            display: none;
+        }
+
         @media (max-width: 768px) {
             .container {
                 grid-template-columns: 1fr;
@@ -258,7 +275,6 @@
         <h1>Power BI Na Real</h1>
         <!-- Links das Redes Sociais -->
         <div class="social-links">
-          
             <a href="https://www.instagram.com/ericvieira_df" target="_blank">
                 <i class="fab fa-instagram"></i>
             </a>
@@ -272,12 +288,9 @@
     </header>
 
     <!-- Cards interativos na lateral esquerda -->
-    <div class="cards-container">
+    <div class="cards-container" id="cardsContainer">
         <!-- Card 1 - Perfil -->
-        <div class="card" id="perfilCard">
-            <i class="fas fa-user"></i>
-            <p>Perfil</p>
-        </div>
+       
 
         <!-- Card 2 -->
         <div class="card">
@@ -297,33 +310,31 @@
             <p><a href="pagina_de_artigos.html" target="_self">Artigos</a></p>
         </div>
 
-        <!-- Card 5 -->
-        <div class="card">
+        <!-- Card 5 - Mapa Mental DAX -->
+        <div class="card" id="mapaMentalCard">
             <i class="fas fa-sitemap"></i>
-            <p><a href="Mapa_Mental.html" target="_self">Mapa Mental DAX</a></p>
+            <p><a href="#" id="openMapaMental">Mapa Mental DAX</a></p>
         </div>
+
+        <!-- Card 6 -->
         <div class="card">
             <i class="fas fa-book"></i>
             <p><a href="livros.html" target="_self">Livros DAX/ M e IA</a></p>
         </div>
     </div>
 
-    <!-- Modal da Bio -->
-    <div id="modalPerfil" class="modal">
-        <div class="modal-content">
-            <span class="close" id="closeModal">&times;</span>
-            <h2>Eric Vieira</h2>
-            <p>No meu canal no YouTube, "Power BI na Real", compartilho meu conhecimento e minha experiência com o objetivo de ajudar outros profissionais a entenderem como usar dados para tomar decisões mais inteligentes e estratégicas. Estou sempre em busca de novos aprendizados e acredito que o conhecimento só tem valor quando compartilhado. É isso que me motiva a continuar ensinando e aprendendo, para que cada vez mais pessoas possam aproveitar o poder dos dados em suas decisões.</p>
-            <p>Mais informações no <a href="https://www.linkedin.com/in/ericvieiradf/" target="_blank">LinkedIn</a>.</p>
-        </div>
+    <!-- Iframe para exibir o mapa mental -->
+    <div id="iframeContainer">
+        <iframe id="iframeMapaMental" src="" width="100%" height="600px" style="border:none;"></iframe>
+        <button id="closeIframe" style="display: block; margin: 10px auto;">Fechar Mapa Mental</button>
     </div>
 
-    <div class="container">
-        <!-- Seções de vídeos e conteúdo principal -->
+    <!-- Seções de vídeos e conteúdo principal -->
+    <div class="container" id="conteudoPrincipal">
         <!-- Seção 1 -->
         <div class="section">
             <div class="icon">
-     
+                <i class="fas fa-file-pdf"></i>
             </div>
             <h2>Relatório em PDF</h2>
             <p>Aprenda a automatizar os relatórios e exportar o PDF.</p>
@@ -335,7 +346,7 @@
         <!-- Seção 2 -->
         <div class="section">
             <div class="icon">
-       
+                <i class="fas fa-calendar-alt"></i>
             </div>
             <h2>Execícios com Datas</h2>
             <p>Melhorando as análises de tempos.</p>
@@ -347,7 +358,7 @@
         <!-- Seção 3 -->
         <div class="section">
             <div class="icon">
-              
+                <i class="fas fa-database"></i>
             </div>
             <h2>Técnicas de ETL</h2>
             <p>Prepar os dados com linguagem M.</p>
@@ -359,7 +370,7 @@
         <!-- Seção 4 -->
         <div class="section">
             <div class="icon">
-      
+                <i class="fas fa-percentage"></i>
             </div>
             <h2>Formatar Números</h2>
             <p>Dicas que podem melhorar os visuais.</p>
@@ -371,7 +382,7 @@
         <!-- Seção 5 -->
         <div class="section">
             <div class="icon">
-           
+                <i class="fas fa-chart-line"></i>
             </div>
             <h2>Ranking na Categoria</h2>
             <p>Usando a linguagem M para criar ranking.</p>
@@ -383,10 +394,10 @@
         <!-- Seção 6 -->
         <div class="section">
             <div class="icon">
-          
+                <i class="fas fa-list"></i>
             </div>
             <h2>Listas no Power Query</h2>
-            <p>Aprendar a criar listas no Power Query.</p>
+            <p>Aprenda a criar listas no Power Query.</p>
             <div class="video-container">
                 <iframe src="https://www.youtube.com/embed/sqvwcQxNT0U" allowfullscreen></iframe>
             </div>
@@ -395,7 +406,7 @@
         <!-- Seção 7 -->
         <div class="section">
             <div class="icon">
-             
+                <i class="fas fa-calendar-alt"></i>
             </div>
             <h2>Trabalhando com Datas</h2>
             <p>Um dos vídeos mais assistidos do canal.</p>
@@ -403,11 +414,10 @@
                 <iframe src="https://www.youtube.com/embed/JfjAe4VrIL8" allowfullscreen></iframe>
             </div>
         </div>
-
         <!-- Seção 8 -->
         <div class="section">
             <div class="icon">
-           
+                <i class="fas fa-cog"></i>
             </div>
             <h2>Etapas ETL</h2>
             <p>10 etapas que vão fazer você voar.</p>
@@ -416,11 +426,9 @@
             </div>
         </div>
 		
-		
-		
-		        <div class="section">
+		 <div class="section">
             <div class="icon">
-        
+        <i class="fas fa-pencil-alt"></i>
             </div>
             <h2>Condicional com cores</h2>
             <p>Nesta aula vamos aprender a formatar cores nos gráficos usando MAXX e MINX.</p>
@@ -428,49 +436,11 @@
                 <iframe src="https://www.youtube.com/embed/9VMIpsuCQJ8" allowfullscreen></iframe>
             </div>
         </div>
-		
-		
-		
-		        <div class="section">
-            <div class="icon">
- 
-            </div>
-            <h2>Quebrar linha </h2>
-            <p>Nesta aula trabalhar com a medida DAX CONCATENATEX, criando linhas e eliminado o total das tabela.</p>
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/ko4oUK6gJcc" allowfullscreen></iframe>
-            </div>
-        </div>
-		
-		        <div class="section">
-            <div class="icon">
-           
-            </div>
-            <h2> Variáveis e outras dicas </h2>
-            <p>Nesta aula vamos falar de criação de tabelas usando DAX, variáveis e outras dicas.</p>
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/OKMwyGtLOaM" allowfullscreen></iframe>
-            </div>
-        </div>
-		
-		        <div class="section">
-            <div class="icon">
-             
-            </div>
-            <h2>Última posição do estoque</h2>
-            <p>Neste vídeo vamos aprender a identificar a última posição do estoque consideranto pra isso a maior data.</p>
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/zA8dnovSFog/edit" allowfullscreen></iframe>
-            </div>
-        </div>
     </div>
-	
-	
-
     <!-- News Ticker fixado no rodapé -->
     <div class="news-ticker">
         <div class="news-ticker-content">
-            <span><i class="fas fa-chart-line"></i> Copilot agora suporta múltiplas linguagens de programação!</span>
+            <span><i class="fas fa-chart-line"></i> 🔊 #dicadogarcia. Está no ar o papo com a Rosani Coutinho no podcast Pausa na Programação!!</span>
             <span><i class="fas fa-arrow-up"></i> Power BI adiciona novas visualizações avançadas</span>
             <span><i class="fas fa-chart-bar"></i> Excel ganha novas funções de análise de dados</span>
             <span><i class="fas fa-database"></i> Power BI Desktop agora permite conexão com R.</span>
@@ -481,23 +451,24 @@
         <p>&copy; 2024 Power BI Na Real - Todos os direitos reservados</p>
     </footer>
 
-    <!-- Script para abrir e fechar o modal -->
+    <!-- Script para abrir e fechar o iframe do Mapa Mental -->
     <script>
-        // Abrir modal ao clicar no card
-        document.getElementById('perfilCard').onclick = function() {
-            document.getElementById('modalPerfil').style.display = 'flex';
+        document.getElementById('openMapaMental').onclick = function(event) {
+            event.preventDefault();
+            // Ocultar outros elementos
+            document.getElementById('conteudoPrincipal').classList.add('hidden');
+            document.getElementById('cardsContainer').classList.add('hidden');
+            // Exibir iframe do mapa mental
+            document.getElementById('iframeMapaMental').src = 'Mapa_Mental.html';  // URL da página do mapa mental
+            document.getElementById('iframeContainer').style.display = 'block';    // Exibe o iframe
         }
 
-        // Fechar modal ao clicar no X
-        document.getElementById('closeModal').onclick = function() {
-            document.getElementById('modalPerfil').style.display = 'none';
-        }
-
-        // Fechar modal ao clicar fora do conteúdo
-        window.onclick = function(event) {
-            if (event.target == document.getElementById('modalPerfil')) {
-                document.getElementById('modalPerfil').style.display = 'none';
-            }
+        document.getElementById('closeIframe').onclick = function() {
+            // Exibir novamente os outros elementos
+            document.getElementById('conteudoPrincipal').classList.remove('hidden');
+            document.getElementById('cardsContainer').classList.remove('hidden');
+            // Esconder o iframe do mapa mental
+            document.getElementById('iframeContainer').style.display = 'none';
         }
     </script>
 
